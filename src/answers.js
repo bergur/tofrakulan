@@ -9,5 +9,5 @@ export const answers = [
   'Kannski, kannski ekki',
   'Engin spurning',
   'Ef þú leggur þig fram',
-  'Hmm óvíst',
+  'Hmm ekki viss',
 ]
