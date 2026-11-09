@@ -1,0 +1,143 @@
+:root {
+  --bg: #1b1035;
+  --bg-glow: #3a1f6e;
+  --text: #f4f0ff;
+  --text-muted: #b9add6;
+  --accent: #ffcf4a;
+  --surface: rgb(255 255 255 / 0.08);
+  --surface-hover: rgb(255 255 255 / 0.16);
+  --border: rgb(255 255 255 / 0.2);
+
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: radial-gradient(circle at 50% 20%, var(--bg-glow), var(--bg) 70%);
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2rem 16px 3rem;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 8vw, 3rem);
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  margin: -0.5rem 0 0.5rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.ask {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.ask__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.ask__input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.button {
+  padding: 0.75rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--surface-hover);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.button--primary {
+  border-color: transparent;
+  color: #241400;
+  background: var(--accent);
+}
+
+.button--primary:hover {
+  background: #ffdb73;
+}
+
+.button--active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggle input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--accent);
+}
+
+.message {
+  min-height: 1.5em;
+  margin: 0;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
